@@ -1,0 +1,53 @@
+REPL Instructions
+
+Code can be entered at the bottom and executed by pressing shift+enter.
+
+Try it now by typing (+ 1 1) in the bottom section and pressing shift+enter.
+
+Working in another Clojure file and sending forms to the REPL is the most efficient way to work. Use the following key bindings to send code to the REPL. See the settings for more keybindings.
+
+ctrl-alt-, then b
+Execute block. Finds the block of Clojure code your cursor is in and executes that.
+
+ctrl-alt-, s
+Executes the selection. Sends the selected text to the REPL.
+
+You can disable this help text in the settings.
+Starting remote REPL connection on localhost:55855
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+:reloading ()
+Refresh complete
+(in-ns require 'johan-thorell-website.core)
+ArityException Wrong number of args (2) passed to:   clojure.lang.AFn.throwArity (AFn.java:429)
+(in-ns 'johan-thorell-website.core)
+johan-thorell-website.core=>
+#object[clojure.lang.Namespace 0x7346376f "johan-thorell-website.core"]
+(read-and-convert! source-dir)
+ArityException Wrong number of args (1) passed to: core/md-to-html  clojure.lang.AFn.throwArity (AFn.java:429)
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+:reloading (johan-thorell-website.core johan-thorell-website.core-test)
+Refresh complete
+(read-and-convert! source-dir)
+johan-thorell-website.core=>
+{"/posts/first_post.html" "<h1>This is my first post</h1><p>A blogpost will go <em>here</em></p>", "/posts/index.html" "<h1>Home page for posts.</h1><p>Your posts should be displayed here.</p><p>POSTSHERE</p>", "/index.html" "<h1>Here is the homepage!</h1><p>Markdown should be converted <em>italic</em> properly and <strong>bold</strong></p><p>Here is a:</p><ul><li>list</li><li>of</li><li>stuff</li></ul>"}
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+:reloading (johan-thorell-website.core johan-thorell-website.core-test)
+Refresh complete
+(apply-header-footer "here is some content!")
+johan-thorell-website.core=>
+"<!DOCTYPE html>\n<html lang=\"en\"><head><title>Static website!</title><meta charset=\"utf-8\"><meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"><body><div class=\"header\"><div class=\"name\"><a href=\"/\">Home page</a><div class=\"header-right\"><a href=\"/posts\">Posts</a></div></div></div>here is some content!</body><footer><p>This is the footer</p></footer></head></html>"
+Refreshing code...
+No user namespace defined. Defaulting to clojure.tools.namespace.repl/refresh.
+
+:reloading (johan-thorell-website.core johan-thorell-website.core-test)
+Refresh complete
+(format-pages (read-and-convert! source-dir))
+johan-thorell-website.core=>
+{"/posts/first_post.html" "<!DOCTYPE html>\n<html lang=\"en\"><head><title>Static website!</title><meta charset=\"utf-8\"><meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"><body><div class=\"header\"><div class=\"name\"><a href=\"/\">Home page</a><div class=\"header-right\"><a href=\"/posts\">Posts</a></div></div></div><h1>This is my first post</h1><p>A blogpost will go <em>here</em></p></body><footer><p>This is the footer</p></footer></head></html>", "/posts/index.html" "<!DOCTYPE html>\n<html lang=\"en\"><head><title>Static website!</title><meta charset=\"utf-8\"><meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"><body><div class=\"header\"><div class=\"name\"><a href=\"/\">Home page</a><div class=\"header-right\"><a href=\"/posts\">Posts</a></div></div></div><h1>Home page for posts.</h1><p>Your posts should be displayed here.</p><p>POSTSHERE</p></body><footer><p>This is the footer</p></footer></head></html>", "/index.html" "<!DOCTYPE html>\n<html lang=\"en\"><head><title>Static website!</title><meta charset=\"utf-8\"><meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\"><body><div class=\"header\"><div class=\"name\"><a href=\"/\">Home page</a><div class=\"header-right\"><a href=\"/posts\">Posts</a></div></div></div><h1>Here is the homepage!</h1><p>Markdown should be converted <em>italic</em> properly and <strong>bold</strong></p><p>Here is a:</p><ul><li>list</li><li>of</li><li>stuff</li></ul></body><footer><p>This is the footer</p></footer></head></html>"}
+--------------------
